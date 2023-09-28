@@ -3,67 +3,47 @@ package org.example;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class PermissionManagerTest {
 
     @Test
-    public void test_getRoleName_ADMIN() {
-        PermissionLevel permissionLevel = PermissionLevel.ADMIN;
+    public void testGetRoleName_ADMIN() {
         PermissionManager permissionManager = new PermissionManager();
-
-        String roleName = permissionManager.getRoleName(permissionLevel);
-
-        assertEquals("Admin", roleName);
+        assertEquals("Admin", permissionManager.getRoleName(PermissionLevel.ADMIN));
     }
 
     @Test
-    public void test_getRoleName_DEVELOPER() {
-        PermissionLevel permissionLevel = PermissionLevel.DEVELOPER;
+    public void testGetRoleName_DEVELOPER() {
         PermissionManager permissionManager = new PermissionManager();
-
-        String roleName = permissionManager.getRoleName(permissionLevel);
-
-        assertEquals("Developer", roleName);
+        assertEquals("Developer", permissionManager.getRoleName(PermissionLevel.DEVELOPER));
     }
 
     @Test
-    public void test_getRoleName_USER() {
-        PermissionLevel permissionLevel = PermissionLevel.USER;
+    public void testGetRoleName_USER() {
         PermissionManager permissionManager = new PermissionManager();
-
-        String roleName = permissionManager.getRoleName(permissionLevel);
-
-        assertEquals("User", roleName);
+        assertEquals("User", permissionManager.getRoleName(PermissionLevel.USER));
     }
 
     @Test
-    public void test_setPermissionLevel_ADMIN() {
-        PermissionLevel permissionLevel = PermissionLevel.ADMIN;
+    public void testGetRoleName_InvalidPermissionLevel() {
         PermissionManager permissionManager = new PermissionManager();
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> permissionManager.getRoleName(PermissionLevel.UNKNOWN));
+        assertEquals("Invalid permission levelUNKNOWN", exception.getMessage());
+    }
 
-        permissionManager.setPermissionLevel(permissionLevel);
-
+    @Test
+    public void testSetPermissionLevel() {
+        PermissionManager permissionManager = new PermissionManager();
+        permissionManager.setPermissionLevel(PermissionLevel.ADMIN);
         assertEquals(PermissionLevel.ADMIN, permissionManager.getCurrentPermissionLevel());
     }
 
     @Test
-    public void test_setPermissionLevel_DEVELOPER() {
-        PermissionLevel permissionLevel = PermissionLevel.DEVELOPER;
+    public void testGetCurrentPermissionLevel() {
         PermissionManager permissionManager = new PermissionManager();
-
-        permissionManager.setPermissionLevel(permissionLevel);
-
-        assertEquals(PermissionLevel.DEVELOPER, permissionManager.getCurrentPermissionLevel());
-    }
-
-    @Test
-    public void test_setPermissionLevel_USER() {
-        PermissionLevel permissionLevel = PermissionLevel.USER;
-        PermissionManager permissionManager = new PermissionManager();
-
-        permissionManager.setPermissionLevel(permissionLevel);
-
         assertEquals(PermissionLevel.USER, permissionManager.getCurrentPermissionLevel());
     }
+
 
 }
