@@ -1,1 +1,1 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/4A-QI4JU)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=bhos-qa_l3-sonarcloud-HuseynAbdullaBANM)](https://sonarcloud.io/summary/new_code?id=bhos-qa_l3-sonarcloud-HuseynAbdullaBANM)
