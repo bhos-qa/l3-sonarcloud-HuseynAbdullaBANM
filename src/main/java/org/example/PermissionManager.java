@@ -23,21 +23,6 @@ public class PermissionManager {
     public PermissionLevel getCurrentPermissionLevel() {
         return mCurrentLevel;
     }
-
-    public static void main(String[] args) {
-        PermissionManager permissionManager = new PermissionManager();
-
-        // Get the role name for the current permission level
-        String roleName = permissionManager.getRoleName(permissionManager.getCurrentPermissionLevel());
-        System.out.println("Current role name:" + roleName);
-
-        // Set the permission level to ADMIN
-        permissionManager.setPermissionLevel(PermissionLevel.ADMIN);
-
-        // Get the role name for the new permission level
-        roleName = permissionManager.getRoleName(permissionManager.getCurrentPermissionLevel());
-        System.out.println("New role name:" + roleName);
-    }
 }
 
 
