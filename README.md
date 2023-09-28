@@ -1,1 +1,1 @@
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=bhos-qa_l3-sonarcloud-HuseynAbdullaBANM&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=bhos-qa_l3-sonarcloud-HuseynAbdullaBANM)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=bhos-qa_l3-sonarcloud-HuseynAbdullaBANM)](https://sonarcloud.io/summary/new_code?id=bhos-qa_l3-sonarcloud-HuseynAbdullaBANM)
